@@ -1,0 +1,62 @@
+<div>
+    <div class="contact">
+        <div class="container">
+            @if(!$succes == true)
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <div class="contact-form">
+                        <form wire:submit.prevent="submitAlerte()">
+                            <div class="text-center">
+                                <h4>Formulaire d'alerte</h4>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    <label for="" class="form-label">Type d'alerte</label>
+                                    <select id="" class="form-control" wire:model="type" required>
+                                        <option disabled selected>Entrer un type d'alerte</option>
+                                        <option>Incendie</option>
+                                        <option>Accident<option>
+                                        <option>Agression<option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="" class="form-label">Niveau</label>
+                                    <input type="range" class="form-control" placeholder="Your Email" wire:model="niveau" required />
+                                </div>
+                                <div class="col-md-6"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" placeholder="Description" wire:model="description" required></textarea>
+                            </div>
+                            <div><button type="submit" wire:click="submitAlerte" class="btn btn-primary float-right">Envoyer</button></div>
+                            <div><a class="btn btn-danger float-left">Annuler</a></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="contact-info">
+                        <h3>Comment remplire ?</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In condimentum quam ac mi viverra dictum. In efficitur ipsum diam, at dignissim lorem tempor in. Vivamus tempor hendrerit finibus.
+                        </p>
+                        <h4><i class="fa fa-map-marker"></i>123 News Street, NY, USA</h4>
+                        <h4><i class="fa fa-envelope"></i>info@example.com</h4>
+                        <h4><i class="fa fa-phone"></i>+123-456-7890</h4>
+                        <div class="social">
+                            <a href=""><i class="fab fa-twitter"></i></a>
+                            <a href=""><i class="fab fa-facebook-f"></i></a>
+                            <a href=""><i class="fab fa-linkedin-in"></i></a>
+                            <a href=""><i class="fab fa-instagram"></i></a>
+                            <a href=""><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @else
+            <div class="d-flex justify-center">
+                <h3 class="text-center text-">!!! Enregistrement effectuer avec  !!!</h3>
+            </div>
+            @endif
+        </div>
+    </div>
+</div>
